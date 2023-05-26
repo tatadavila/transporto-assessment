@@ -1,19 +1,20 @@
-// @pages
-import { Home } from "./pages";
+// @vendors
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
-// @components
-import { Header } from "./components";
+// @app
+import { router } from "./app";
 
 // @styles.css
 import "./App.css";
 
 function App() {
-  return (
-    <div className="app__container">
-      <Header />
-      <Home />
-    </div>
-  );
+  const tasks = useSelector((state) => state.data.tasks);
+
+  useEffect(() => {
+    localStorage.setItem("tasksData", JSON.stringify(tasks));
+  }, [tasks]);
+  return <div className="app__container">{router}</div>;
 }
 
 export default App;
