@@ -5,6 +5,7 @@
   justify-content: flex-start;
   margin: 0;
   height: 100%;
+  overflow-y: auto;
   padding: 1rem;
   width: 100%;
 }
