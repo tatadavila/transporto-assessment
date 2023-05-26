@@ -1,4 +1,9 @@
-import { dataSlice, store, updateTasks } from "./store";
+import {
+  dataSlice,
+  markTaskDone,
+  setShowPendindTaskModal,
+  store,
+} from "./store";
 import { router } from "./router";
 
-export { dataSlice, store, router, updateTasks };
+export { dataSlice, router, markTaskDone, setShowPendindTaskModal, store };

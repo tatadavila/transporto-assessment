@@ -1,4 +1,4 @@
-import { dataSlice, updateTasks } from "./slices";
+import { dataSlice, markTaskDone, setShowPendindTaskModal } from "./slices";
 import store from "./store";
 
-export { dataSlice, store, updateTasks };
+export { dataSlice, markTaskDone, setShowPendindTaskModal, store };

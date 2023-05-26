@@ -1,3 +1,3 @@
-import dataSlice, { updateTasks } from "./dataSlice";
+import dataSlice, { markTaskDone, setShowPendindTaskModal } from "./dataSlice";
 
-export { dataSlice, updateTasks };
+export { dataSlice, markTaskDone, setShowPendindTaskModal };
