@@ -17,11 +17,9 @@ export const CardGrid = () => {
       <Row xs={1} md={2} className="g-5 mt-0">
         {tasks.map((task) => {
           return (
-            !task.done && (
-              <Col key={task.id}>
-                <TaskCard taskInfo={task} />
-              </Col>
-            )
+            <Col key={task.id}>
+              <TaskCard taskInfo={task} />
+            </Col>
           );
         })}
       </Row>
