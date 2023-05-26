@@ -1,4 +1,10 @@
 .app__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
   height: 100%;
+  padding: 1rem;
   width: 100%;
 }
