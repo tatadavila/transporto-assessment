@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // @app
-import { updateTasks } from "../app";
+import { markTaskDone } from "../app";
 
 export const Task = () => {
   const { taskId } = useParams();
@@ -17,11 +17,9 @@ export const Task = () => {
   const dispatch = useDispatch();
 
   const handleOnClick = () => {
-    dispatch(updateTasks(taskId));
+    dispatch(markTaskDone(taskId));
     navigate("/home");
   };
-
-  console.log("TASK ID",taskId);
 
   return (
     <Stack gap={2} className="col-md-5 mx-auto h-100  ">
