@@ -31,7 +31,9 @@ export const isSubTask = (taskId, tasks) => {
 
 export const isRequiredTaskDone = (index, taskId, tasks) => {
   const isIdSubtask = isSubTask(taskId, tasks);
-  if (!isIdSubtask && index > 0) {
+  if (!tasks[0].done) {
+    return { taskId: tasks[0].id, value: tasks[0].done };
+  } else if (!isIdSubtask && index > 0) {
     return { taskId: tasks[0].id, value: tasks[0].done };
   } else if (isIdSubtask && index > 0) {
     const parentArr = findParentArray(taskId, tasks);
