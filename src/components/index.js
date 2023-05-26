@@ -1,3 +1,4 @@
+import { CardGrid } from "./cardgrid/CardGrid";
 import { Header } from "./header";
 
-export { Header };
+export { CardGrid, Header };
