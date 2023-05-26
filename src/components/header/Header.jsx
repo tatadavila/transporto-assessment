@@ -1,23 +1,33 @@
 // @vendors
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
 
 export const Header = () => {
+  const location = useLocation();
+
+  const isHomeActive = location.pathname === "/home";
+
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container
-        className="m-0 py-0 pl-10 pr-0 d-flex justify-content-between align-items-center"
-        fluid
-      >
-        <Navbar.Brand className="" href="#home">
-          Task Manarger
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto">
-            <Nav.Link>Home</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="dark"
+      variant="dark"
+      className="my-10 px-2 d-flex justify-content-between fluid"
+    >
+      <Navbar.Brand>Task Manager</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mx-auto">
+          <Nav.Link
+            as={Link}
+            to="/home"
+            className={isHomeActive ? "active" : ""}
+          >
+            Home
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   );
 };
