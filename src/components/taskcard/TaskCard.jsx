@@ -14,13 +14,13 @@ export const TaskCard = ({ taskInfo }) => {
       <Card.Body>
         {taskInfo.subTasks.length === 0 ? (
           <Link to={`/task/${taskInfo.id}`}>
-            <Button id={taskInfo.id}>Hacer Tarea #{taskInfo.id}</Button>
+            <Button hidden={taskInfo.done}>Hacer Tarea #{taskInfo.id}</Button>
           </Link>
         ) : (
           taskInfo.subTasks.map((subTask) => {
             return (
               <Link key={subTask.id} to={`/task/${subTask.id}`}>
-                <Button>Hacer Tarea #{subTask.id}</Button>
+                <Button hidden={subTask.done}>Hacer Tarea #{subTask.id}</Button>
               </Link>
             );
           })
